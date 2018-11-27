@@ -15,6 +15,7 @@ public class BaseBoard {
 	//int column, row= 8;
 
 	//we checked inRow, inColumn, inBox methods. they work.
+	//next step is to manipulate the board (add another dummy board), then solve.
 	}
 	private static boolean inRow(int board[][], int row, int x)
 	{
