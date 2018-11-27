@@ -11,37 +11,43 @@ public class BaseBoard {
 	{3,0,0,0,0,0,5,0,0},
 	{0,6,0,5,0,0,2,0,0},
 	{0,0,7,0,8,3,0,6,9}};
+	int column, row;
 	private boolean inRow(int row, int x)
 	{
-		for(int i = 0; i < column; i ++){
+		boolean b=true;
+		for(int i = 0; i < column; i++){
 		if(board[row][i] == x)
-			return true;
+			b= true;
 
 		else
-			return false;
-	}
+			b= false;
+		}
+		return b;
 	}
 	private boolean inColumn(int column, int x)
 	{	
+		boolean b=true;
 		for(int i = 0; i < row; i ++){
 			if(board[i][column] == x)
-				return true;
+				b= true;
 			else
-				return false;
+				b= false;
 		}
+		return b;
 	}
 	private boolean inBox(int row, int column, int x)
 	{
+		boolean b=true;
 		int row2 =(row+1) / 3;
 		int column2 = (column +1)/3;
 		for(int i=row2; i<row2+3;i++){
-			for{int j=column2+3;j++{
+			for(int j=column2;j<column2+3;j++){
 				if(board[i][j] == x){
-					return true;
+					b= true;
 				}
 				else 
-					return false;
+					b= false;
 			}
-		}
+		} return b;
 	}
 }
