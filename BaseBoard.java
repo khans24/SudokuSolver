@@ -1,7 +1,8 @@
 package Solver;
 
 public class BaseBoard {	
-	int board[][] = new int[][]{
+	public static void main(String[] args) {
+	public static int board[][] = new int[][]{
 	{5,8,0,1,7,0,3,0,0},
 	{0,0,9,0,0,8,0,1,0},
 	{0,0,3,0,0,0,0,0,8},
@@ -12,7 +13,15 @@ public class BaseBoard {
 	{0,6,0,5,0,0,2,0,0},
 	{0,0,7,0,8,3,0,6,9}};
 	int column, row;
-	private boolean inRow(int row, int x)
+
+	check();
+	}
+	private static void check(int board[][], int row, int column, int x)
+	{
+		if(inRow(board,0,5)&& inColumn(board,1,8)&& inBox(board,0,0,9)) 
+			System.out.println("works");
+	}
+	private static boolean inRow(int board[][], int row, int column, int x)
 	{
 		boolean b=true;
 		for(int i = 0; i < column; i++){
@@ -24,7 +33,7 @@ public class BaseBoard {
 		}
 		return b;
 	}
-	private boolean inColumn(int column, int x)
+	private boolean inColumn(int board[][], int row, int column, int x)
 	{	
 		boolean b=true;
 		for(int i = 0; i < row; i ++){
@@ -35,7 +44,7 @@ public class BaseBoard {
 		}
 		return b;
 	}
-	private boolean inBox(int row, int column, int x)
+	private boolean inBox(int board[][], int row, int column, int x)
 	{
 		boolean b=true;
 		int row2 =(row+1) / 3;
@@ -50,10 +59,10 @@ public class BaseBoard {
 			}
 		} return b;
 	}
-	
-	private boolean good(int r, int c, int x){
-		if(!inBox(r,c,x) && !inColumn(c,x) && !inRow(r,x))
+	private boolean good(int b[][], int r, int c, int x){
+		if(!inBox(b,r,c,x) && !inColumn(b,r,c,x) && !inRow(b,r,c,x))
 			return true;
 		else 
 			return false;
 	}
+}
