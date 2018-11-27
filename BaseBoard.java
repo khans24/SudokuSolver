@@ -34,6 +34,14 @@ public class BaseBoard {
 	{
 		int row2 =(row+1) / 3;
 		int column2 = (column +1)/3;
-		for(
+		for(int i=row2; i<row2+3;i++){
+			for{int j=column2+3;j++{
+				if(board[i][j] == x){
+					return true;
+				}
+				else 
+					return false;
+			}
+		}
 	}
 }
