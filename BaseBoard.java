@@ -50,4 +50,10 @@ public class BaseBoard {
 			}
 		} return b;
 	}
-}
+	
+	private boolean good(int r, int c, int x){
+		if(!inBox(r,c,x) && !inColumn(c,x) && !inRow(r,x))
+			return true;
+		else 
+			return false;
+	}
