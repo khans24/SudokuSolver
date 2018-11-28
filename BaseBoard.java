@@ -47,7 +47,7 @@ public class BaseBoard {
 		}
 		return false;
 	}
-	//check to see if all the Sudoku rules are met(number not in column, row, and 3x3 box)
+	//check to see if all the Sudoku rules are met(number x not in column, row, and 3x3 box)
 	private static boolean good(int b[][], int r, int c, int x){
 		if(!inBox(b,r,c,x) && !inColumn(b,c,x) && !inRow(b,r,x))
 			return true;
