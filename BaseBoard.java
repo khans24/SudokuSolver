@@ -15,4 +15,41 @@ public class BaseBoard {
 	
 	//we checked inRow, inColumn, inBox methods. they work.
 	//next step is to manipulate the board (add another dummy board), then solve.
+		public int[][] getBoard()
+	{
+		
+		return this.board;
+	}
+	public void fillSpot(int n, int row, int column)
+	{
+		for(int i = 0; i <=row; i ++)
+		{
+			if (i == row)
+			for (int j = 0; j <= column;j++)
+			{
+				if (j ==column)
+					if(this.board[i][j]==0)
+						this.board[i][j] = n;
+					else
+						System.out.printf("Error spot is filled.");
+			}
+		}
+	}
+	public void print()
+	{
+		for (int i = 0; i<board.length ; i ++)
+		{
+			System.out.println();
+			if (i%3 ==0)
+				System.out.println("------------------------");
+			for(int j = 0; j< board[i].length; j++)
+			{
+				if(j%3==0)
+					System.out.print("| ");
+				System.out.printf(board[i][j]+ " ");
+				
+			}
+		}
+	}
+	
 }
