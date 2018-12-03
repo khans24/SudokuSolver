@@ -1,6 +1,7 @@
 package Solver;
 
 public class Constraints {
+	//check is spot is empty
 	//check if number x is in the row
 	private static boolean inRow(int board[][], int row, int x)
 	{
@@ -33,11 +34,9 @@ public class Constraints {
 		return false;
 	}
 	//check to see if all the Sudoku rules are met(number x not in column, row, and 3x3 box)
-	private static boolean good(int b[][], int r, int c, int x){
+	protected static boolean good(int b[][], int r, int c, int x){
 		if(!inBox(b,r,c,x) && !inColumn(b,c,x) && !inRow(b,r,x))
 			return true;
 		return false;
 	}
-}
-
 }
