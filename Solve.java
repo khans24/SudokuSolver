@@ -17,16 +17,35 @@ public class Solve extends Constraints {
 		BaseBoard x = new BaseBoard(board);	
 		x.fillSpot(8, 0, 2);
 		x.print();
-		
-		for (int i = 0; i <board.length;i++)
+	
+
+	}	
+	public boolean solved(BaseBoard x)
 		{
-			for (int j= 0; j< board[0].length ; j++)
+		int [][] board = x.getBoard();
+			for (int i = 0; i <board.length;i++)
 			{
-				if(x.getBoard()[i][j] == 0)
+				for (int j= 0; j< board[0].length ; j++)
 				{
-						
+					if(x.getBoard()[i][j] == 0)
+					{
+						for(int k = 1; k <10; k++)
+						{
+							if(good(board, i, j, k))
+							{
+								x.fillSpot(k, i, j);
+								if(solved(x))
+								{
+									return true;
+								}
+								else
+								{
+									x.fillSpot(0, i, j);
+								}
+							}	
+						}return false;
+					}
 				}
-			}
+			}return true;
 		}
-	}
 }
