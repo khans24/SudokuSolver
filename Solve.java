@@ -1,3 +1,8 @@
+/*Sadia Khan and Dorothy Scheines
+Artificial Intelligence Final Project
+Sudoku Solver
+12/10/2018
+*/
 package Solver;
 
 public class Solve extends Constraints {
