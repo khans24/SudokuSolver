@@ -13,12 +13,10 @@ public class Solve extends Constraints {
 			{3,0,0,0,0,0,5,0,0},
 			{0,6,0,5,0,0,2,0,0},
 			{0,0,7,0,8,3,0,6,9}};
-		
 		BaseBoard x = new BaseBoard(board);	
-		x.fillSpot(8, 0, 2);
 		x.print();
-	
-
+		if(solved(x));
+			x.print();
 	}	
 	public boolean solved(BaseBoard x)
 		{
