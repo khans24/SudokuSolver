@@ -14,11 +14,31 @@ public class Solve extends Constraints {
 			{0,6,0,5,0,0,2,0,0},
 			{0,0,7,0,8,3,0,6,9}};
 		BaseBoard x = new BaseBoard(board);	
+		System.out.println("Unsolved Board X:");
 		x.print();
-		if(solved(x));
+		if(solved(x)) {
+			System.out.println("\n\nSolved Sudoku Board X:");
 			x.print();
+		}
+		int [][]board2 = new int[][]{
+			{0,0,0,0,0,4,3,7,0},
+			{6,3,0,0,7,0,2,0,0},
+			{0,0,0,8,6,0,0,0,0},
+			{1,0,9,0,0,6,0,0,0},
+			{0,0,4,0,0,0,9,0,0},
+			{0,0,0,1,0,0,4,0,8},
+			{0,0,0,0,4,7,0,0,0},
+			{0,0,7,0,2,0,0,4,1},
+			{0,2,8,9,0,0,0,0,0}};
+		BaseBoard y = new BaseBoard(board2);
+		System.out.println("\n\nUnsolved Board Y:");
+		y.print();
+		if(solved(y)) {
+			System.out.println("\n\nSolved Sudoku Board Y:");
+			y.print();
+		}
 	}	
-	public boolean solved(BaseBoard x)
+	public static boolean solved(BaseBoard x)
 		{
 		int [][] board = x.getBoard();
 			for (int i = 0; i <board.length;i++)
@@ -47,3 +67,4 @@ public class Solve extends Constraints {
 			}return true;
 		}
 }
+
