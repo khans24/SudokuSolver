@@ -6,8 +6,7 @@ Sudoku Solver
 package Solver;
 
 public class Constraints {
-	//check is spot is empty
-	//check if number x is in the row
+	//check if the number x is in the row
 	private static boolean inRow(int board[][], int row, int x)
 	{
 		for(int i = 0;i <= 8; i++){
@@ -16,7 +15,7 @@ public class Constraints {
 		}
 		return false;
 	}
-	//check if number x is in the column
+	//check if the number x is in the column
 	private static boolean inColumn(int board[][], int column, int x)
 	{
 		for(int i = 0; i <= 8; i ++){
@@ -25,7 +24,7 @@ public class Constraints {
 		}
 		return false;
 	}
-	//check if number x is in the 3x3 box
+	//check if the number x is in the 3x3 box
 	private static boolean inBox(int board[][], int row, int column, int x)
 	{
 		int row2 =(row / 3) *3;
@@ -38,7 +37,7 @@ public class Constraints {
 		}
 		return false;
 	}
-	//check to see if all the Sudoku rules are met(number x not in column, row, and 3x3 box)
+	//check to see if all the Sudoku rules/constraints are met(number x not in the column, row, and 3x3 box)
 	protected static boolean good(int b[][], int r, int c, int x){
 		if(!inBox(b,r,c,x) && !inColumn(b,c,x) && !inRow(b,r,x))
 			return true;
