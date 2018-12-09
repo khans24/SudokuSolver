@@ -9,7 +9,6 @@ public class BaseBoard {
 	private int board[][] ;
 
 	//when baseboard object is created constructor creates the default board which is a 2d array.
-	//our 9x9 sudoku board, 0's indicate empty spots
 	public BaseBoard()
 	{
 		board = new int[9][9];
@@ -50,9 +49,4 @@ public class BaseBoard {
 			}
 		}
 	}
-	
-	//we checked inRow, inColumn, inBox methods. they work.
-	//next step is to manipulate the board (add another dummy board), then solve.
-	
-	//check if number x is in the row}
 }
